@@ -1,0 +1,14 @@
+document.getElementById('add-button').addEventListener('click', function() {
+    var taskInput= document.getElementById('task-input');
+    var taskList= document.getElementById('task-list');
+
+    if(taskInput.ariaValueMax.trim()) {
+        var task = document.createElement('Li');
+        task.textContent=taskInput.value;
+        task.addEventListener('click', function(){
+            this.classList.toggle('completed');
+        });
+        taskList.appendChild(task);
+        taskInput.value='';
+    }
+});
